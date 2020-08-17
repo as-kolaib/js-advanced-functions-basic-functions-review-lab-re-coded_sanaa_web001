@@ -46,7 +46,25 @@ if(arrayFunctions.length<1){
     return a;}
     else{
       for(let i=0;i<arrayFunctions.length;i++){
+        a=  let arrayFunctions = [
+    function(a){ return a * 2 },
+    function(a){ return a + 1000},
+    function(a){ return a % 7 }
+  ]
+function actionApplyer(a,arrayFunctions){
+
+if(arrayFunctions.length<1){
+    return a;}
+    else{
+      for(let i=0;i<arrayFunctions.length;i++){
         a= arr[i](a);
+      }
+      return a
+      }
+    }
+
+
+console.log(actionApplyer(0,arrayFunctions));[i](a);
       }
       return a
       }
