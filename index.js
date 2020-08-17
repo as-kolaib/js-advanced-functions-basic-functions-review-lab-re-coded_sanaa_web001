@@ -35,22 +35,23 @@ function saturdayFun(activity = "roller-skate") {
     },
   };
   
-const actionApplyer = (base, array) =>
-  array.reduce((accumulatedOutput, fun) => fun(accumulatedOutput), base);
-  
-console.log(actionApplyer(0, []));
-let arrayOfTransforms = [
-  function (a) {
-    return a * 2;
-  },
-  function (a) {
-    return a + 1000;
-  },
-  function (a) {
-    return a % 7;
-  },
-];
-actionApplyer(13, arrayOfTransforms);
-  
+ let arrayFunctions = [
+    function(a){ return a * 2 },
+    function(a){ return a + 1000},
+    function(a){ return a % 7 }
+  ]
+function actionApplyer(a,arr=arrayFunctions){
 
+if(arrayFunctions.length<1){
+    return a;}
+    else{
+      for(let i=0;i<arrayFunctions.length;i++){
+        a= arr[i](a);
+      }
+      return a
+      }
+    }
+
+
+console.log(actionApplyer(0,arrayFunctions));
   
